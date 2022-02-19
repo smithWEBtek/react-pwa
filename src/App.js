@@ -14,9 +14,9 @@ function App() {
         <Navbar bg="primary" variant="dark">
           <Nav className="mr-auto">
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-            <Nav.Link><Link to="/">Home</Link></Nav.Link>
-            <Nav.Link><Link to="/about">About</Link></Nav.Link>
-            <Nav.Link><Link to="/users">Users</Link></Nav.Link>
+            <Link className="nav-link" to="/">Home</Link>
+            <Link className="nav-link" to="/about">About</Link>
+            <Link className="nav-link" to="/users">Users</Link>
           </Nav>
         </Navbar>
         <Switch>
