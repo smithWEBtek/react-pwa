@@ -6,6 +6,14 @@ import About from './About';
 import Home from './Home';
 import Users from './Users';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import FormControlSelect from './FormControlSelect';
+
+const selectItems = [
+  { id: 1, name: 'small' },
+  { id: 2, name: 'medium' },
+  { id: 3, name: 'large' },
+]
 
 function App() {
   return (
@@ -19,6 +27,9 @@ function App() {
             <Link className="nav-link" to="/users">Users</Link>
           </Nav>
         </Navbar>
+        <Button variant="contained">Hello Select</Button>
+        <FormControlSelect items={selectItems}></FormControlSelect>
+
         <Switch>
           <Route path="/about" component={About}></Route>
           <Route path="/users" component={Users}></Route>
