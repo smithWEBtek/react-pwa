@@ -1,20 +1,54 @@
 import React from 'react';
-import { FormControl, Select, MenuItem } from '@mui/material';
+import { FormControl, FormHelperText, InputLabel, Select, MenuItem } from '@mui/material';
+import { makeStyles } from '@mui/styles'
 
-const FormControlSelect = (selectItems) => {
-  console.log(selectItems);
-  const selectMenuItems = selectItems.items.map(item => (
-    <MenuItem key={item.id} value={item.name}>{item.name}</MenuItem>
-  ))
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: 'unset',
+    minWidth: '400px',
+    padding: '20px',
+    textAlign: 'center',
+  },
+  selectedEmpty: {
+    margin: '10px',
+    border:  '3px solid yellow'
+  }
+}))
+
+const FormControlSelect = (items) => {
+  const [selection, setSelection] = React.useState('')
+  const classes = useStyles()
+  const handleChangeSelection = (event) => {
+    setSelection(event.target.value)
+  }
+  
+  const menuItems = items.items.map(item => <MenuItem key={item.id} value={item.name}>{item.name}</MenuItem>)
+
   return (
-    <FormControl style={{ minWidth: '400px', display: 'block' }}>
-      <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
-        value=''
+    <FormControl
+      required
+      className={classes.formControl}
+      // disabled
+      // error
+      // variant="outlined"
+      variant="filled"
       >
-        {selectMenuItems}
+      {/* <InputLabel shrink>Select your answer</InputLabel> */}
+      <Select
+        labelId="select-demo"
+        id="answer-select"
+        value={selection}
+        onChange={handleChangeSelection}
+        // displayEmpty
+        // inputProps={{ readOnly: true }}
+        // inputProps={{ 'arial-label': 'Without label'}}
+        // className={classes.selectedEmpty}
+        autoWidth
+      >
+        {/* <MenuItem value=''>Empty</MenuItem> */}
+        {menuItems}
       </Select>
+      <FormHelperText>{selection === '' ? 'Select one answer (required)' : 'Selected'}</FormHelperText>
     </FormControl>
   )
 }

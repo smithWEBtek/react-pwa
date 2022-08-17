@@ -6,7 +6,6 @@ import About from './About';
 import Home from './Home';
 import Users from './Users';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import Button from '@mui/material/Button';
 import FormControlSelect from './FormControlSelect';
 
 const selectItems = [
@@ -14,6 +13,7 @@ const selectItems = [
   { id: 2, name: 'medium' },
   { id: 3, name: 'large' },
 ]
+
 
 function App() {
   return (
