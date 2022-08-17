@@ -9,7 +9,8 @@
 
 .navbar a {
   color: #fff;
-text-decoration: none;
+  text-decoration: none;
+  padding-left: 32px;
 }
 
 .navbar a:hover {
