@@ -27,7 +27,6 @@ function App() {
             <Link className="nav-link" to="/users">Users</Link>
           </Nav>
         </Navbar>
-        <Button variant="contained">Hello Select</Button>
         <FormControlSelect items={selectItems}></FormControlSelect>
 
         <Switch>
