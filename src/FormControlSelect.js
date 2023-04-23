@@ -33,7 +33,7 @@ const FormControlSelect = (items) => {
       // variant="outlined"
       variant="filled"
       >
-      {/* <InputLabel shrink>Select your answer</InputLabel> */}
+      <InputLabel shrink>Select your answer</InputLabel>
       <Select
         labelId="select-demo"
         id="answer-select"
